@@ -1,0 +1,20 @@
+
+version: '3'
+
+services:
+  mariadb:
+    image: 'mariadb:10.2'
+    ports:
+      - '3306:3306'
+    volumes:
+      - 'mariadb_data:/bitnami/mariadb'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: inventory
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MARIADB_ROOT_PASSWORD: root
+
+volumes:
+  mariadb_data:
+    driver: local
